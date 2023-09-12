@@ -253,7 +253,7 @@ for n_snr = 1:N_SNR
         Ber_iCDP(n_snr)                                     = Ber_iCDP(n_snr) + biterr(wlanScramble((vitdec((matintrlv((deintrlv(Bits_iCDP(:),Random_permutation_Vector)).',Interleaver_Columns,Interleaver_Rows).'),trellis,tbl,'trunc','hard')),scramInit),Bits_Stream_Coded);
         Ber_T_DFT(n_snr)                                    = Ber_T_DFT(n_snr) + biterr(wlanScramble((vitdec((matintrlv((deintrlv(Bits_T_DFT(:),Random_permutation_Vector)).',Interleaver_Columns,Interleaver_Rows).'),trellis,tbl,'trunc','hard')),scramInit),Bits_Stream_Coded);
         Ber_TA_TDFT(n_snr)                                  = Ber_TA_TDFT(n_snr) + biterr(wlanScramble((vitdec((matintrlv((deintrlv(Bits_TA_TDFT(:),Random_permutation_Vector)).',Interleaver_Columns,Interleaver_Rows).'),trellis,tbl,'trunc','hard')),scramInit),Bits_Stream_Coded);  
-        Ber_LMMSE (n_snr)                                   = Ber_LMMSE (n_snr) + biterr(wlanScramble((vitdec(Bits_LMMSE(:),trellis,tbl,'trunc','hard')),scramInit),Bits_Stream_Coded);        
+        Ber_LMMSE (n_snr)                                   = Ber_LMMSE (n_snr) + biterr(wlanScramble((vitdec((matintrlv((deintrlv(Bits_LMMSE(:),Random_permutation_Vector)).',Interleaver_Columns,Interleaver_Rows).'),trellis,tbl,'trunc','hard')),scramInit),Bits_Stream_Coded);        
         Ber_TRFI(n_snr)                                     = Ber_TRFI(n_snr) + biterr(wlanScramble((vitdec((matintrlv((deintrlv(Bits_TRFI(:),Random_permutation_Vector)).',Interleaver_Columns,Interleaver_Rows).'),trellis,tbl,'trunc','hard')),scramInit),Bits_Stream_Coded);
         
     end            
